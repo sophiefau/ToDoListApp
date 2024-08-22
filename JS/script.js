@@ -21,7 +21,7 @@ function newItem(){
      li.on("dblclick", function crossOut() {
       li.toggleClass("strike");
     });
-  
+
    //3(i). Adding the delete button "X": 
      let crossOutButton = $('<crossOutButton></crossOutButton>');
      crossOutButton.append(document.createTextNode('X'));
@@ -36,6 +36,14 @@ function newItem(){
      $('#list').sortable();
   
   }
+
+   //enable entering while pressing "Enter"
+    $('#input').on('keypress', function(event) {
+      if (event.which === 13) {
+        event.preventDefault(); 
+        newItem(); 
+      }
+    });
   
    
   
