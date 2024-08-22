@@ -4,7 +4,7 @@ function newItem(){
   //javascript
   //1. Adding a new item to the list of items: 
      let li = $('<li></li>');
-     let inputValue = $('input').val();
+     let inputValue = $('#input').val();
      let text = document.createTextNode(inputValue);
      li.append(inputValue);
   
@@ -22,14 +22,14 @@ function newItem(){
      li.addEventListener("dblclick",crossOut);
   
    //3(i). Adding the delete button "X": 
-     let crossOutButton = $("crossOutButton");
+     let crossOutButton = $('<crossOutButton></crossOutButton>');
      crossOutButton.append(document.createTextNode("X"));
      li.append(crossOutButton);
   
      crossOutButton.addEventListener("click", deleteListItem);
    //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
      function deleteListItem(){
-       li.classList.add("delete")
+       li.addClass("delete")
      }
    // 4. Reordering the items: 
      $('#list').sortable();
